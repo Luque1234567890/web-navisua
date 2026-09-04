@@ -215,7 +215,7 @@ main{
 }
 
 #precios .price-row{
-  grid-template-columns:1.12fr .46fr 1.42fr .78fr !important;
+  grid-template-columns:1.05fr 1.35fr .7fr !important;
   align-items:center;
   gap:10px !important;
 }
@@ -426,7 +426,7 @@ main{
   .header{min-height:84px;}
   .top-popover{top:auto;bottom:76px;}
   #precios .price-table{overflow-x:auto !important;}
-  #precios .price-row{min-width:440px;font-size:.79rem !important;padding:9px 11px !important;gap:7px !important;}
+  #precios .price-row{min-width:350px;font-size:.79rem !important;padding:9px 11px !important;gap:7px !important;}
   #precios .price-row.heading{font-size:.64rem !important;}
   #precios .price-sale{font-size:.78rem;}
   #precios .price-row .price-consult{font-size:.61rem;padding:5px 7px;}
