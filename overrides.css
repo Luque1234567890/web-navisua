@@ -321,6 +321,12 @@ main{
 /* En pantallas compactas la llamada principal queda en el encabezado/portada,
    evitando que el enlace duplicado del aviso cubra el logo o el menú. */
 @media(max-width:1040px){
+  /* El logo vuelve a su fila propia; no se superpone a las ventanas superiores. */
+  .header{
+    position:relative !important;
+    top:auto !important;
+  }
+
   .header nav.open{
     top:100% !important;
     z-index:80;
@@ -337,6 +343,12 @@ main{
     top:calc(100% + 10px);
     border:3px solid #8dcc37;
   }
+}
+
+/* Se anula la franja emergente que mostraba solo el cierre “X”. */
+.top-popover,
+.top-popover.open{
+  display:none !important;
 }
 
 @media(max-width:700px){
