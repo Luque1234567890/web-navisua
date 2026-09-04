@@ -298,6 +298,66 @@ main{
   animation:nav-window-pulse 2.8s ease-in-out .55s infinite;
 }
 
+/* Identidad a la izquierda y ventanas comerciales centradas en la misma franja. */
+.top-windows{
+  display:grid !important;
+  grid-template-columns:minmax(165px,1fr) auto minmax(165px,1fr);
+  align-items:center;
+}
+
+.top-brand{
+  grid-column:1;
+  justify-self:start;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  width:180px;
+  min-width:0 !important;
+  min-height:70px;
+  padding:7px 12px !important;
+  margin-left:0 !important;
+  background:#fff !important;
+  border:3px solid #a8e600 !important;
+  border-radius:13px;
+  box-shadow:0 5px 0 rgba(0,54,25,.34);
+  animation:none !important;
+}
+
+.top-brand img{
+  width:135px;
+  max-height:54px;
+  object-fit:contain;
+}
+
+.top-window-group{
+  grid-column:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.top-windows .top-quote{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:236px;
+  min-height:70px;
+  padding:14px 24px;
+  background:var(--lime);
+  border:2px solid #fff;
+  border-radius:12px;
+  color:var(--ink);
+  font-size:.9rem;
+  font-weight:900;
+  text-transform:uppercase;
+  text-decoration:none;
+  text-align:center;
+  white-space:nowrap;
+  box-shadow:0 5px 0 #78a600;
+  animation:nav-window-pulse 2.8s ease-in-out .55s infinite;
+}
+
 .header{
   min-height:104px;
 }
@@ -321,6 +381,9 @@ main{
 /* En pantallas compactas la llamada principal queda en el encabezado/portada,
    evitando que el enlace duplicado del aviso cubra el logo o el menú. */
 @media(max-width:1040px){
+  .top-windows{display:flex !important;justify-content:flex-start;gap:12px !important;overflow-x:auto;}
+  .top-brand{flex:0 0 170px;}
+  .top-window-group{display:flex;flex:0 0 auto;}
   /* El logo vuelve a su fila propia; no se superpone a las ventanas superiores. */
   .header{
     position:relative !important;
@@ -356,7 +419,10 @@ main{
   .top-windows .window-trigger{min-width:194px;min-height:59px;padding:10px 13px !important;font-size:1.12rem !important;}
   .top-windows .window-trigger span{font-size:.75rem !important;}
   .top-windows .window-trigger b{font-size:.61rem !important;}
-  .top-windows > a{min-width:198px;min-height:59px;padding:10px 13px !important;font-size:.72rem !important;}
+  .top-brand{flex-basis:145px;width:145px;min-height:59px;padding:6px 9px !important;}
+  .top-brand img{width:115px;max-height:44px;}
+  .top-window-group{gap:7px;}
+  .top-windows .top-quote{min-width:198px;min-height:59px;padding:10px 13px;font-size:.72rem;}
   .header{min-height:84px;}
   .top-popover{top:auto;bottom:76px;}
   #precios .price-table{overflow-x:auto !important;}
