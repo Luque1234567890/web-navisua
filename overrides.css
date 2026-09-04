@@ -252,7 +252,79 @@ main{
   color:#12301e;
 }
 
+/* Barra comercial y navegación: mayor presencia y lectura inmediata. */
+.top-windows{
+  min-height:96px;
+  padding-inline:clamp(22px,5vw,92px) !important;
+  gap:10px !important;
+  background:linear-gradient(90deg,#075b2c,#117a3c 48%,#075b2c) !important;
+  border-bottom:4px solid #a8e600;
+}
+
+.top-windows .window-trigger{
+  min-width:230px;
+  min-height:70px;
+  padding:14px 25px !important;
+  gap:12px !important;
+  border:2px solid #b6ef22 !important;
+  border-radius:12px;
+  background:#117a3c !important;
+  font-size:1.42rem !important;
+  box-shadow:0 5px 0 rgba(0,54,25,.34);
+  animation:nav-window-pulse 2.8s ease-in-out infinite;
+}
+
+.top-windows .window-trigger span{
+  font-size:.9rem !important;
+  font-weight:800;
+  line-height:1.22 !important;
+}
+
+.top-windows .window-trigger b{
+  font-size:.73rem !important;
+  letter-spacing:.055em !important;
+}
+
+.top-windows > a{
+  min-width:236px;
+  min-height:70px;
+  justify-content:center;
+  margin-left:auto;
+  padding:14px 24px !important;
+  border:2px solid #fff !important;
+  border-radius:12px;
+  font-size:.9rem !important;
+  box-shadow:0 5px 0 #78a600;
+  animation:nav-window-pulse 2.8s ease-in-out .55s infinite;
+}
+
+.header{
+  min-height:104px;
+}
+
+.header nav a{
+  padding:11px 13px !important;
+  border:2px solid #83bf13;
+  font-size:.72rem !important;
+  box-shadow:0 3px 0 rgba(17,113,49,.15);
+}
+
+@keyframes nav-window-pulse{
+  0%,100%{transform:translateY(0);filter:brightness(1);box-shadow:0 5px 0 rgba(0,54,25,.34),0 0 0 0 rgba(180,240,0,0)}
+  50%{transform:translateY(-2px);filter:brightness(1.11);box-shadow:0 6px 0 rgba(0,54,25,.34),0 0 0 8px rgba(180,240,0,0)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .top-windows .window-trigger,.top-windows > a{animation:none !important;}
+}
+
 @media(max-width:700px){
+  .top-windows{min-height:78px;padding-inline:10px !important;gap:7px !important;}
+  .top-windows .window-trigger{min-width:194px;min-height:59px;padding:10px 13px !important;font-size:1.12rem !important;}
+  .top-windows .window-trigger span{font-size:.75rem !important;}
+  .top-windows .window-trigger b{font-size:.61rem !important;}
+  .top-windows > a{min-width:198px;min-height:59px;padding:10px 13px !important;font-size:.72rem !important;}
+  .header{min-height:84px;}
   #precios .price-table{overflow-x:auto !important;}
   #precios .price-row{min-width:440px;font-size:.79rem !important;padding:9px 11px !important;gap:7px !important;}
   #precios .price-row.heading{font-size:.64rem !important;}
