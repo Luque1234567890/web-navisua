@@ -485,3 +485,35 @@ main{
   .full-activity .badges{grid-template-columns:1fr;}
   .full-activity .hero-background{aspect-ratio:4 / 3;}
 }
+
+/* Tabla comercial compacta: sin espacio sobrante entre columnas. */
+@media(min-width:1041px){
+  #precios.prices{
+    grid-template-columns:minmax(0,1fr) minmax(510px,680px);
+    gap:clamp(42px,5vw,78px);
+  }
+
+  #precios .price-table{
+    width:100%;
+    max-width:680px;
+    justify-self:end;
+  }
+}
+
+#precios .price-row{
+  grid-template-columns:minmax(130px,1.1fr) minmax(90px,.65fr) auto !important;
+}
+
+#precios .price-row .price-consult{
+  min-width:96px;
+}
+
+@media(min-width:701px) and (max-width:1040px){
+  #precios.prices{grid-template-columns:1fr;gap:34px;}
+  #precios .price-table{width:min(100%,680px);justify-self:start;}
+}
+
+@media(max-width:700px){
+  #precios .price-row{min-width:0 !important;grid-template-columns:minmax(105px,1fr) minmax(55px,.45fr) auto !important;}
+  #precios .price-row .price-consult{min-width:78px;}
+}
