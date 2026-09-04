@@ -318,6 +318,27 @@ main{
   .top-windows .window-trigger,.top-windows > a{animation:none !important;}
 }
 
+/* En pantallas compactas la llamada principal queda en el encabezado/portada,
+   evitando que el enlace duplicado del aviso cubra el logo o el menú. */
+@media(max-width:1040px){
+  .header nav.open{
+    top:100% !important;
+    z-index:80;
+    border-top:3px solid #a8e600;
+    box-shadow:0 14px 28px rgba(10,70,32,.2);
+  }
+
+  .top-popover .text-link{
+    display:none !important;
+  }
+
+  .top-popover{
+    z-index:90;
+    top:calc(100% + 10px);
+    border:3px solid #8dcc37;
+  }
+}
+
 @media(max-width:700px){
   .top-windows{min-height:78px;padding-inline:10px !important;gap:7px !important;}
   .top-windows .window-trigger{min-width:194px;min-height:59px;padding:10px 13px !important;font-size:1.12rem !important;}
@@ -325,6 +346,7 @@ main{
   .top-windows .window-trigger b{font-size:.61rem !important;}
   .top-windows > a{min-width:198px;min-height:59px;padding:10px 13px !important;font-size:.72rem !important;}
   .header{min-height:84px;}
+  .top-popover{top:auto;bottom:76px;}
   #precios .price-table{overflow-x:auto !important;}
   #precios .price-row{min-width:440px;font-size:.79rem !important;padding:9px 11px !important;gap:7px !important;}
   #precios .price-row.heading{font-size:.64rem !important;}
